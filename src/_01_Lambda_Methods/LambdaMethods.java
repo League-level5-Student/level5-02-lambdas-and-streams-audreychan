@@ -30,7 +30,7 @@ public class LambdaMethods {
 		//3. Call the printCustomMessage method using a lambda so that the String prints with a mix between upper an lower case characters.
 		printCustomMessage((s)->{
 			for(int i = 0; i < s.length(); i++) {
-				int j = rand.nextInt(1);
+				int j = rand.nextInt(2);
 				switch(j) {
 				case 0:
 					System.out.print(s.toLowerCase().charAt(i));
@@ -42,10 +42,45 @@ public class LambdaMethods {
 			}
 		}, "jello");
 		
+		System.out.println();
+		System.out.println();
+		
 		//4. Call the printCustomMessage method using a lambda so that the String prints with a period in between each character.
+		printCustomMessage((s)->{
+			for(int i = 0; i < s.length(); i++) {
+				if(i == s.length()-1) System.out.print(s.charAt(i));
+				else {
+					System.out.print(s.charAt(i));
+					System.out.print(".");
+				}
+			}
+			
+		}, "banjo");
+		
+		
+		System.out.println();
+		System.out.println();
 		
 		//5. Call the printCustomMessage method using a lambda so that the String prints without any vowels.
-	
+		printCustomMessage((s)->{
+			for(int i = 0; i < s.length(); i++) {
+				switch(s.toLowerCase().charAt(i)) {
+				case 'a':
+					break;
+				case 'e':
+					break;
+				case 'i':
+					break;
+				case 'o':
+					break;
+				case 'u':
+					break;
+				default:
+					System.out.print(s.charAt(i));
+				}
+			}
+			
+		}, "willow");
 	}
 	
 	public static void printCustomMessage(SpecialPrinter sp, String value) {
